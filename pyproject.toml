@@ -1,0 +1,70 @@
+[build-system]
+build-backend = "uv_build"
+requires = [ "uv-build>=0.13.8,<0.14" ]
+
+[project]
+name = "tp-final-rl"
+version = "0.1.0"
+description = "Reinforcement Learning final project (UdeSA): Merton/Kelly allocation and the no-trade band."
+readme = "README.md"
+license = "MIT"
+license-files = [ "LICENSE" ]
+authors = [
+  { name = "Joaquín León Alderete" },
+  { name = "Santino Domato" },
+]
+requires-python = ">=3.14"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+  "gymnasium>=1.4",
+  "matplotlib>=3.11.2",
+  "numpy>=2.5.4",
+  "tensorboard>=2.21",
+]
+urls.Repository = "https://github.com/jleonalderete/tp-final-rl"
+
+[dependency-groups]
+dev = [
+  "basedpyright>=1.40.2",
+  "pre-commit>=4.7",
+  "pytest>=9.2",
+  "ruff>=0.17.5",
+]
+
+[tool.ruff]
+line-length = 100
+format.docstring-code-format = true
+lint.select = [
+  "B",   # flake8-bugbear
+  "C4",  # flake8-comprehensions
+  "D",   # pydocstyle
+  "E",   # pycodestyle errors
+  "F",   # pyflakes
+  "I",   # isort
+  "NPY", # NumPy-specific rules
+  "PIE", # flake8-pie
+  "PT",  # flake8-pytest-style
+  "PTH", # flake8-use-pathlib
+  "RUF", # Ruff-specific rules
+  "SIM", # flake8-simplify
+  "UP",  # pyupgrade
+  "W",   # pycodestyle warnings
+]
+lint.ignore = [ "D107" ]  # __init__ is documented by the class docstring
+lint.per-file-ignores."tests/**" = [ "D" ]
+lint.pydocstyle.convention = "google"
+
+[tool.pyproject-fmt]
+max_supported_python = "3.14"
+
+[tool.pytest]
+strict = true
+testpaths = [ "tests" ]
+
+[tool.basedpyright]
+venv = ".venv"
+venvPath = "."
+typeCheckingMode = "standard"

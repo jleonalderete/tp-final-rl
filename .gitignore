@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+*.egg-info
+
+# Virtual environment and tool caches
+.venv/
+.ruff_cache/
+.pytest_cache/
+
+# Experiment outputs (TensorBoard, checkpoints, logs) and videos
+/runs/
+/videos/
+
+# Report build outputs: built locally or in CI, not versioned
+report/*.pdf
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.fdb_latexmk
+report/*.fls
+report/*.log
+report/*.out
+report/*.synctex.gz
+report/*.toc
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,45 @@
+% Informe del proyecto final de Aprendizaje Reforzado.
+% Límite: 10 páginas, sin contar la declaración de uso de IA (arranca en página nueva al final).
+% Compilar desde la raíz del repo: tectonic report/main.tex
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\else
+  \usepackage{fontspec}
+\fi
+\usepackage[spanish,es-nodecimaldot,es-noshorthands,es-tabla]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{figures/}}
+
+\title{Asignación óptima de cartera con aprendizaje por refuerzo:\\
+  Merton, Kelly y la banda de no-transacción}
+\author{Joaquín León Alderete \and Santino Domato}
+\date{Aprendizaje Reforzado, Universidad de San Andrés\\Noviembre de 2026}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/01-objectives}
+\input{sections/02-introduction}
+\input{sections/03-development}
+\input{sections/04-diagnostic-case}
+\input{sections/05-conclusions}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\clearpage
+\input{sections/06-ai-declaration}
+
+\end{document}
