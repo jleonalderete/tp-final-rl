@@ -44,6 +44,7 @@ report/
 docs/
   assignment.md      the course's assignment, limited to what applies to this project
   experiment-log.md  run log: source for the report's Development section and diagnostic case
+  proposal.md        draft proposal for the scope beyond the minimum objectives
 runs/                training outputs: TensorBoard logs and checkpoints (not versioned)
 ```
 
