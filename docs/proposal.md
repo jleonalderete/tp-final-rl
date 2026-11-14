@@ -92,8 +92,20 @@ Left out: a bot trading real money, and optimal execution.
 4. **Objective 3.** One policy conditioned on the cost, or one run per cost level. The first
    gives stage B the generalization it needs but is harder to train. The second is simpler and
    more robust.
+
+   **Proposed approach:** train a separate agent for each transaction cost level, keeping the
+   cost fixed throughout each training run and the other market parameters the same across
+   cost levels. Compare the learned no-trade bands to measure how their width changes with
+   cost. The specific cost levels remain to be agreed upon.
+
 5. **Timing of stage C.** To have a week of data in the report the bot has to start around
    Nov 21. It can keep running until the oral defense, around Dec 10.
+6. **Parameter estimation for stage B.** It would be interesting to explore rolling-window
+   and exponentially weighted estimates of expected returns and volatility, and possibly GARCH
+   for volatility. Rolling windows are simple to interpret; exponential weighting gives more
+   weight to recent observations; GARCH adds model fitting and validation. We could compare
+   how these choices affect the same trained policy, using only data available before each
+   decision. The methods and their settings remain open for discussion.
 
 ## References
 
