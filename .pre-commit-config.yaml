@@ -20,6 +20,8 @@ repos:
       - id: check-yaml
       - id: detect-private-key
       - id: end-of-file-fixer
+        # Windows may check this symlink out as its target path without a newline.
+        exclude: ^CLAUDE\.md$
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: trailing-whitespace
@@ -61,6 +63,8 @@ repos:
     hooks:
       - id: prettier
         types_or: [markdown, yaml, json]
+        # Preserve the symlink target path in Windows checkouts.
+        exclude: ^CLAUDE\.md$
 
   - repo: https://github.com/Mateusz-Grzelinski/actionlint-py
     rev: v1.7.12.25
